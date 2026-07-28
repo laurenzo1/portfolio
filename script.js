@@ -79,3 +79,43 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         this.reset();
     }, 2500);
 });
+document.addEventListener('DOMContentLoaded', () => {
+
+  document.querySelectorAll('.about-card .avatar img').forEach(img => {
+    img.addEventListener('click', () => {
+      let overlay = document.querySelector('.img-overlay');
+      if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'img-overlay';
+        overlay.innerHTML = `
+          <div class="img-frame">
+            <img alt="Agrandissement" />
+            <button class="img-close" aria-label="Fermer">×</button>
+          </div>
+        `;
+        document.body.appendChild(overlay);
+        
+        overlay.addEventListener('click', (e) => {
+          if (e.target === overlay) closeOverlay();
+        });
+
+        overlay.querySelector('.img-close').addEventListener('click', closeOverlay);
+      }
+
+      overlay.querySelector('img').src = img.src;
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden'; 
+      
+      function onKey(e) {
+        if (e.key === 'Escape') closeOverlay();
+      }
+      document.addEventListener('keydown', onKey);
+
+      function closeOverlay() {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+        document.removeEventListener('keydown', onKey);
+      }
+    });
+  });
+});
