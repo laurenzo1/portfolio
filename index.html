@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevCrew · Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div class="bg-particles">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="glow-orb"></div>
+    <div class="glow-orb glow-orb--bottom"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">
+            <div class="logo-icon">&lt;/&gt;</div>
+            <span>DevCrew</span>
+        </div>
+        <button class="barre" id="menuToggle" aria-label="Menu">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about" class="active">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-badge">
+            <span class="dot"></span>
+            Open for collaborations
+        </div>
+        <h1>
+            <span class="gradient-text">Hi, I'm Alex</span><span class="type-cursor"></span>
+        </h1>
+        <p>
+            Web Developer &amp; Cybersecurity Enthusiast — crafting secure,
+            pixel-perfect digital experiences with a touch of creativity.
+        </p>
+        <div class="hero-actions">
+            <a href="#projects" class="btn-primary"><i class="fas fa-rocket" style="margin-right:8px;"></i>Explore Work</a>
+            <a href="#contact" class="btn-secondary"><i class="fas fa-paper-plane" style="margin-right:8px;"></i>Let's Talk</a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <div class="number">4+</div>
+                <div class="label">Projects</div>
+            </div>
+            <div class="stat">
+                <div class="number">11</div>
+                <div class="label">Comments</div>
+            </div>
+            <div class="stat">
+                <div class="number">75</div>
+                <div class="label">Likes</div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="sub">Who we are</span>
+                <h2>About <span class="highlight">DevCrew</span></h2>
+                <p>Two minds, one mission — building the future with code &amp; creativity.</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="avatar">L</div>
+                    <h3>Laurenzo</h3>
+                    <div class="role">🛡️ Cybersecurity · Ethical Hacker</div>
+                    <p>
+                        Computer science student at ENI Toliara. Passionate about hacking,
+                        I practice daily through CTF challenges on TryHackMe and HackDNA.
+                        My goal: become a certified security expert.
+                    </p>
+                    <a href="#" class="btn-download"><i class="fas fa-download"></i> Download CV</a>
+                </div>
+                <div class="about-card">
+                    <div class="avatar">G</div>
+                    <h3>Gaetan</h3>
+                    <div class="role">💻 Web Developer · UI/UX</div>
+                    <p>
+                        Web developer at ENI Toliara. I craft responsive, accessible
+                        interfaces with HTML, CSS, and JavaScript. I believe in clean
+                        code and delightful user experiences.
+                    </p>
+                    <a href="#" class="btn-download"><i class="fas fa-download"></i> Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="sub">Expertise</span>
+                <h2>Our <span class="highlight">Skills</span></h2>
+                <p>Technologies &amp; tools we work with every day.</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card" data-delay="0">
+                    <h4><span class="emoji">🛡️</span> Laurenzo</h4>
+                    <div class="skill-item">
+                        <div class="skill-label"><span>Linux Ecosystem</span><span>75%</span></div>
+                        <div class="skill-bar"><div class="fill" data-width="75"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label"><span>Python</span><span>20%</span></div>
+                        <div class="skill-bar"><div class="fill" data-width="20"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label"><span>Network</span><span>35%</span></div>
+                        <div class="skill-bar"><div class="fill" data-width="35"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label"><span>Hack Tools</span><span>10%</span></div>
+                        <div class="skill-bar"><div class="fill" data-width="10"></div></div>
+                    </div>
+                </div>
+                <div class="skill-card" data-delay="150">
+                    <h4><span class="emoji">💻</span> Gaetan</h4>
+                    <div class="skill-item">
+                        <div class="skill-label"><span>HTML</span><span>85%</span></div>
+                        <div class="skill-bar"><div class="fill" data-width="85"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label"><span>CSS</span><span>70%</span></div>
+                        <div class="skill-bar"><div class="fill" data-width="70"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label"><span>JavaScript</span><span>45%</span></div>
+                        <div class="skill-bar"><div class="fill" data-width="45"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label"><span>Frameworks</span><span>10%</span></div>
+                        <div class="skill-bar"><div class="fill" data-width="10"></div></div>
+                    </div>
+                </div>
+                <div class="skill-card" data-delay="300">
+                    <h4><span class="emoji">⚡</span> Shared</h4>
+                    <div class="skill-item">
+                        <div class="skill-label"><span>Team Work</span><span>90%</span></div>
+                        <div class="skill-bar"><div class="fill" data-width="90"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label"><span>Problem Solving</span><span>80%</span></div>
+                        <div class="skill-bar"><div class="fill" data-width="80"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label"><span>Creativity</span><span>85%</span></div>
+                        <div class="skill-bar"><div class="fill" data-width="85"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label"><span>Communication</span><span>70%</span></div>
+                        <div class="skill-bar"><div class="fill" data-width="70"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="sub">Portfolio</span>
+                <h2>Featured <span class="highlight">Projects</span></h2>
+                <p>Some of the things we've built together.</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-delay="0">
+                    <div class="icon"><i class="fas fa-shield-halved"></i></div>
+                    <h4>CyberGuard CTF</h4>
+                    <p>A capture-the-flag platform for ethical hacking challenges, built with Flask and Docker.</p>
+                    <div class="tags"><span>Python</span><span>Flask</span><span>Docker</span></div>
+                </div>
+                <div class="project-card" data-delay="150">
+                    <div class="icon"><i class="fas fa-globe"></i></div>
+                    <h4>EcoTrack</h4>
+                    <p>Real-time carbon footprint tracker with interactive maps and data visualization.</p>
+                    <div class="tags"><span>React</span><span>D3</span><span>Leaflet</span></div>
+                </div>
+                <div class="project-card" data-delay="300">
+                    <div class="icon"><i class="fas fa-robot"></i></div>
+                    <h4>DevCrew AI</h4>
+                    <p>An AI-powered code assistant that suggests optimizations and detects vulnerabilities.</p>
+                    <div class="tags"><span>Python</span><span>TensorFlow</span><span>FastAPI</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="sub">Get in touch</span>
+                <h2>Let's <span class="highlight">Connect</span></h2>
+                <p>Have a project in mind? We'd love to hear from you.</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info reveal">
+                    <h3>Contact Info</h3>
+                    <p>Reach out through any of the channels below.</p>
+                    <div class="item">
+                        <div class="ico"><i class="fas fa-phone"></i></div>
+                        <div class="info"><div class="label">Phone</div>+261 33 02 35 303</div>
+                    </div>
+                    <div class="item">
+                        <div class="ico"><i class="fas fa-envelope"></i></div>
+                        <div class="info"><div class="label">Email</div>laurenzo1456@gmail.com</div>
+                    </div>
+                    <div class="item">
+                        <div class="ico"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="info"><div class="label">Location</div>Tour Eiffel, Paris</div>
+                    </div>
+                    <div class="item">
+                        <div class="ico"><i class="fab fa-facebook"></i></div>
+                        <div class="info"><div class="label">Facebook</div>m.facebook.com</div>
+                    </div>
+                </div>
+                <form class="contact-form reveal" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your name</label>
+                        <input type="text" id="name" placeholder="John Doe" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" id="email" placeholder="john@example.com" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="service">How did you find us?</label>
+                        <select id="service">
+                            <option>Very good</option>
+                            <option>Good</option>
+                            <option>Good enough</option>
+                            <option>Bad</option>
+                            <option>Really bad</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your message</label>
+                        <textarea id="message" placeholder="Tell us about your project..."></textarea>
+                    </div>
+                    <input type="submit" value="Send Request" />
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="socials">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="links">
+            <a href="#">Mentions légales</a>
+            <a href="#">Confidentialité</a>
+            <a href="#">CGU</a>
+            <a href="#">Support</a>
+        </div>
+        <div class="copy">&copy; 2026 DevCrew. Tous droits réservés.</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
