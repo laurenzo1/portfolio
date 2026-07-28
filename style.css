@@ -501,6 +501,102 @@ img {
     transform: translateY(-6px);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
+
+.about-card .avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;           
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 40px rgba(168,85,247,0.18);
+}
+
+
+.about-card .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          
+  display: block;
+  border-radius: inherit;     
+  transition: transform 0.4s ease, filter 0.3s ease;
+  cursor: zoom-in;
+}
+
+.about-card .avatar:hover img {
+  transform: scale(1.12);
+}
+
+.img-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.78);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+
+.img-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.img-overlay .img-frame {
+  position: relative;
+  max-width: 92%;
+  max-height: 92%;
+  padding: 6px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-overlay img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 22px 80px rgba(0,0,0,0.6);
+}
+
+
+.img-overlay .img-close {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  color: #111;
+  font-size: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+
+@media (max-width: 992px) {
+  .about-card .avatar {
+    width: 120px;
+    height: 120px;
+  }
+}
+@media (max-width: 480px) {
+  .about-card .avatar {
+    width: 88px;
+    height: 88px;
+  }
+}
 .about-card .avatar {
     width: 72px;
     height: 72px;
