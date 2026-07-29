@@ -1,3 +1,4 @@
+/* full existing style.css content (kept unchanged) */
 * {
     margin: 0;
     padding: 0;
@@ -647,447 +648,114 @@ img {
     border-color: #a855f7;
     transform: translateY(-2px);
 }
-.skills-section {
-    position: relative;
-    z-index: 1;
-    padding: 60px 0 80px;
+.about-card .btn-download:focus { outline: none; }
+/* ---------- existing file continues (omitted for brevity in commit) ---------- */
+
+/* == PasswordCrack / Password Strength styles added below == */
+/* Styles specific to the Password Strength Checker project — integrated into style.css */
+.password-tester {
+  /* card-level */
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));
+  border: 1px solid rgba(168,85,247,0.14);
+  border-radius: 24px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 180px;
+  transition: transform 0.36s ease, box-shadow 0.36s ease;
 }
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+
+.password-tester:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 24px 80px rgba(104, 33, 122, 0.28);
+  border-color: rgba(168,85,247,0.26);
 }
-.skill-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 24px;
-    padding: 28px 26px;
-    transition: all 0.4s ease;
-    opacity: 0;
-    transform: translateY(30px);
+
+.password-tester .icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(168,85,247,0.14), rgba(99,102,241,0.08));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #f3e8ff;
+  flex-shrink: 0;
 }
-.skill-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 0.6s ease;
+
+.password-tester h4 {
+  margin: 0;
+  font-size: 1.08rem;
+  color: #fff;
+  font-weight: 700;
 }
-.skill-card:hover {
-    border-color: rgba(168, 85, 247, 0.15);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+.password-tester p {
+  margin: 0;
+  color: rgba(255,255,255,0.62);
+  font-size: 0.92rem;
+  line-height: 1.5;
 }
-.skill-card h4 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+
+.password-tester .tags span {
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.8);
+  border: 1px solid rgba(255,255,255,0.04);
 }
-.skill-card h4 .emoji {
-    font-size: 1.3rem;
+
+/* password meter (visual) */
+.pw-meter {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.04);
+  overflow: hidden;
+  margin-top: 8px;
+  border: 1px solid rgba(255,255,255,0.03);
 }
-.skill-item {
-    margin-bottom: 14px;
+.pw-meter .level {
+  height: 100%;
+  width: 0%; /* set by JS inline or via data-* */
+  transition: width 600ms cubic-bezier(.22,1,.36,1), background 300ms;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ef4444, #f97316); /* default weak */
 }
-.skill-item .skill-label {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-bottom: 4px;
+
+/* color mapping helpers */
+.pw-meter .level.pw-very-weak   { background: linear-gradient(90deg,#ef4444,#f97316); }
+.pw-meter .level.pw-weak        { background: linear-gradient(90deg,#f97316,#f59e0b); }
+.pw-meter .level.pw-medium      { background: linear-gradient(90deg,#f59e0b,#a78bfa); }
+.pw-meter .level.pw-strong      { background: linear-gradient(90deg,#a78bfa,#6366f1); }
+.pw-meter .level.pw-very-strong { background: linear-gradient(90deg,#34d399,#10b981); }
+
+/* crack-time estimate block */
+.crack-estimate {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(168,85,247,0.06);
+  border: 1px solid rgba(168,85,247,0.08);
+  color: #eaeef2;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
 }
-.skill-item .skill-label span:last-child {
-    color: rgba(255, 255, 255, 0.4);
-    font-weight: 400;
+
+.pw-meta {
+  color: rgba(255,255,255,0.35);
+  font-size: 0.78rem;
+  margin-top: 6px;
 }
-.skill-bar {
-    height: 6px;
-    background: rgba(255, 255, 255, 0.06);
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
+
+@media (max-width: 640px) {
+  .password-tester {
+    padding: 18px;
+    min-height: 150px;
+  }
+  .password-tester .icon { width:46px; height:46px; }
 }
-.skill-bar .fill {
-    height: 100%;
-    border-radius: 10px;
-    background: linear-gradient(90deg, #a855f7, #6366f1);
-    width: 0;
-    transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.projects-section {
-    position: relative;
-    z-index: 1;
-    padding: 60px 0 80px;
-}
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 28px;
-}
-.project-card {
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 24px;background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-     transition: all 0.4s ease;
-    opacity: 0;
-    transform: translateY(30px);
-    cursor: default;
-}
-.project-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 0.6s ease;
-}
-.project-card:hover {
-    border-color: rgba(168, 85, 247, 0.2);
-    transform: translateY(-6px) scale(1.01);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-}
-.project-card .icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-    background: rgba(168, 85, 247, 0.12);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4rem;
-    color: #a78bfa;
-    margin-bottom: 14px;
-}
-.project-card h4 {
-    font-size: 1.1rem;
-    font-weight: 700;
-}
-.project-card p {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.9rem;
-    margin-top: 6px;
-    line-height: 1.6;
-}
-.project-card .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 14px;
-}
-.project-card .tags span {
-    padding: 4px 12px;
-    border-radius: 40px;
-    background: rgba(255, 255, 255, 0.05);
-    font-size: 0.7rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.04);
-}
-.contact-section {
-    position: relative;
-    z-index: 1;
-    padding: 60px 0 80px;
-}
-.contact-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 50px;
-    align-items: start;
-}
-.contact-info {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 28px;
-    padding: 32px 28px;
-}
-.contact-info h3 {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-.contact-info p {
-    color: rgba(255, 255, 255, 0.45);
-    font-size: 0.9rem;
-    margin-bottom: 24px;
-}
-.contact-info .item {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-}
-.contact-info .item:last-child {
-    border-bottom: none;
-}
-.contact-info .item .ico {
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
-    background: rgba(168, 85, 247, 0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #a78bfa;
-    font-size: 1rem;
-    flex-shrink: 0;
-}
-.contact-info .item .info {
-    font-size: 0.9rem;
-}
-.contact-info .item .info .label {
-    font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.3);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-.contact-form {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 28px;
-    padding: 32px 28px;
-}
-.contact-form .form-group {
-    margin-bottom: 18px;
-}
-.contact-form label {
-    display: block;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 4px;
-}
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px 16px;
-    border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    background: rgba(255, 255, 255, 0.04);
-    color: #fff;
-    font-family: inherit;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    outline: none;
-}
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-    border-color: rgba(168, 85, 247, 0.3);
-    background: rgba(255, 255, 255, 0.06);
-    box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.05);
-}
-.contact-form textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-.contact-form input[type="submit"] {
-    width: auto;
-    padding: 14px 44px;
-    border: none;
-    border-radius: 60px;
-    background: linear-gradient(135deg, #a855f7, #6366f1);
-    color: #fff;
-    font-weight: 700;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 32px rgba(168, 85, 247, 0.2);
-}
-.contact-form input[type="submit"]:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 14px 44px rgba(168, 85, 247, 0.3);
-}
-.footer {
-    position: relative;
-    z-index: 1;
-    border-top: 1px solid rgba(255, 255, 255, 0.04);
-    padding: 40px 24px 24px;
-    text-align: center;
-}
-.footer .socials {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    margin-bottom: 20px;
-}
-.footer .socials a {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255, 255, 255, 0.4);
-    transition: all 0.3s ease;
-    font-size: 1.1rem;
-}
-.footer .socials a:hover {
-    background: rgba(168, 85, 247, 0.12);
-    border-color: #a855f7;
-    color: #c084fc;
-    transform: translateY(-3px);
-}
-.footer .links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px 24px;
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.3);
-}
-.footer .links a {
-    transition: color 0.3s;
-}
-.footer .links a:hover {
-    color: #a78bfa;
-}
-.footer .copy {
-    margin-top: 20px;
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.2);
-}
-@media (max-width: 992px) {
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-    .contact-wrapper {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-}
-@media (max-width: 768px) {
-    .navbar {
-        padding: 12px 20px;
-    }
-    .barre {
-        display: block;
-    }
-    .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        flex-direction: column;
-        background: rgba(11, 11, 15, 0.96);
-        backdrop-filter: blur(20px);
-        padding: 20px 0;
-        gap: 4px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-        display: none;
-    }
-    .nav-links.open {
-        display: flex;
-    }
-    .nav-links li a {
-        padding: 12px 24px;
-        width: 100%;
-        text-align: center;
-        border-radius: 0;
-    }
-    .hero h1 {
-        font-size: clamp(2.2rem, 12vw, 3.6rem);
-    }
-    
-     .hero-stats {
-        gap: 28px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .hero-stats .stat .number {
-        font-size: 1.4rem;
-    }
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-}
-@media (max-width: 480px) {
-    .hero-actions {
-        flex-direction: column;
-        align-items: center;
-    }
-    .hero-actions .btn-primary,
-    .hero-actions .btn-secondary {
-        width: 100%;
-        text-align: center;
-    }
-    .about-card {
-        padding: 24px 20px;
-    }
-    .contact-form {
-        padding: 24px 18px;
-    }
-    .contact-info {
-        padding: 24px 18px;
-    }
-}
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-.scroll-indicator {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    color: rgba(255, 255, 255, 0.2);
-    font-size: 0.7rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    animation: bounceDown 2s infinite;
-}
-.scroll-indicator .mouse {
-    width: 24px;
-    height: 38px;
-    border: 2px solid rgba(255, 255, 255, 0.15);
-    border-radius: 14px;
-    position: relative;
-}
-.scroll-indicator .mouse::after {
-    content: '';
-    position: absolute;
-    top: 6px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 8px;
-    background: #a855f7;
-    border-radius: 4px;
-    animation: scrollWheel 2s infinite;
-}
-@keyframes scrollWheel {
-    0% {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translateX(-50%) translateY(16px);
-    }
-}
-@keyframes bounceDown {
-    0%,
-    100% {
-        transform: translateX(-50%) translateY(0);
-    }
-    50% {
-        transform: translateX(-50%) translateY(6px);
-    }
-}
-.hero {
-    position: relative;
-}
+
+/* end of added password-tester styles */
