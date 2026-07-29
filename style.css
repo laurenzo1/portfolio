@@ -1,4 +1,3 @@
-/* full existing style.css content (kept unchanged) */
 * {
     margin: 0;
     padding: 0;
@@ -649,12 +648,7 @@ img {
     transform: translateY(-2px);
 }
 .about-card .btn-download:focus { outline: none; }
-/* ---------- existing file continues (omitted for brevity in commit) ---------- */
-
-/* == PasswordCrack / Password Strength styles added below == */
-/* Styles specific to the Password Strength Checker project — integrated into style.css */
 .password-tester {
-  /* card-level */
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));
   border: 1px solid rgba(168,85,247,0.14);
   border-radius: 24px;
@@ -704,7 +698,6 @@ img {
   border: 1px solid rgba(255,255,255,0.04);
 }
 
-/* password meter (visual) */
 .pw-meter {
   width: 100%;
   height: 10px;
@@ -716,20 +709,18 @@ img {
 }
 .pw-meter .level {
   height: 100%;
-  width: 0%; /* set by JS inline or via data-* */
+  width: 0%;
   transition: width 600ms cubic-bezier(.22,1,.36,1), background 300ms;
   border-radius: inherit;
-  background: linear-gradient(90deg, #ef4444, #f97316); /* default weak */
+  background: linear-gradient(90deg, #ef4444, #f97316); 
 }
 
-/* color mapping helpers */
 .pw-meter .level.pw-very-weak   { background: linear-gradient(90deg,#ef4444,#f97316); }
 .pw-meter .level.pw-weak        { background: linear-gradient(90deg,#f97316,#f59e0b); }
 .pw-meter .level.pw-medium      { background: linear-gradient(90deg,#f59e0b,#a78bfa); }
 .pw-meter .level.pw-strong      { background: linear-gradient(90deg,#a78bfa,#6366f1); }
 .pw-meter .level.pw-very-strong { background: linear-gradient(90deg,#34d399,#10b981); }
 
-/* crack-time estimate block */
 .crack-estimate {
   margin-top: 10px;
   padding: 10px 12px;
@@ -757,5 +748,3 @@ img {
   }
   .password-tester .icon { width:46px; height:46px; }
 }
-
-/* end of added password-tester styles */
